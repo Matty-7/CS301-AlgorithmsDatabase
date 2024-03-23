@@ -1,0 +1,84 @@
+   FAIL : INSERTION_SORT.1.out -- /home/cs301/RELEASE-cs301-repo/book-solution/sols-repo/cs301py/chap02-Intro/E-2.0.0-INSERTION_SORT/INSERTION_SORT.1.out 
+diff stdout(up to 10000 lines):                                           ......
+==============================
+      input  : 18   1  13  15  18   0   6  14  15   8
+    - sorted :  0   1   6   8  13  14  15  15  18  18
+    - 
+    -  Run stats   |   Count
+    - -------------+---------
+    -  cmpcnt      |      32
+    -  swapcnt     |      23
+
+diff stderr(up to 10000 lines):                                           ......
+==============================
+    + Traceback (most recent call last):
+    +   File "/home/cs301/cs301-sag-server/sag-server/result-repo/jh730/HW1/E-2.0.0-INSERTION_SORT/wdir_eval/E-2.0.0-INSERTION_SORT/wdir_bist/E-2.0.0-INSERTION_SORT/main.py", line 8, in <module>
+    +     INSERTION_SORT.main(ax)
+    +   File "/home/cs301/cs301-sag-server/sag-server/result-repo/jh730/HW1/E-2.0.0-INSERTION_SORT/wdir_eval/E-2.0.0-INSERTION_SORT/wdir_bist/E-2.0.0-INSERTION_SORT/INSERTION_SORT.py", line 19, in main
+    +     A = INSERTION_SORT(A)
+    + TypeError: INSERTION_SORT() missing 1 required positional argument: 'n'
+    + Command exited with non-zero status 1
+
+   FAIL : INSERTION_SORT.2.out -- /home/cs301/RELEASE-cs301-repo/book-solution/sols-repo/cs301py/chap02-Intro/E-2.0.0-INSERTION_SORT/INSERTION_SORT.2.out 
+diff stdout(up to 10000 lines):                                           ......
+==============================
+      input  : 10   2  33  31  20   4  15  23   2  26   8  38  22  24  26  18  16  29  11  19
+    - sorted :  2   2   4   8  10  11  15  16  18  19  20  22  23  24  26  26  29  31  33  38
+    - 
+    -  Run stats   |   Count
+    - -------------+---------
+    -  cmpcnt      |     105
+    -  swapcnt     |      86
+
+diff stderr(up to 10000 lines):                                           ......
+==============================
+    + Traceback (most recent call last):
+    +   File "/home/cs301/cs301-sag-server/sag-server/result-repo/jh730/HW1/E-2.0.0-INSERTION_SORT/wdir_eval/E-2.0.0-INSERTION_SORT/wdir_bist/E-2.0.0-INSERTION_SORT/main.py", line 8, in <module>
+    +     INSERTION_SORT.main(ax)
+    +   File "/home/cs301/cs301-sag-server/sag-server/result-repo/jh730/HW1/E-2.0.0-INSERTION_SORT/wdir_eval/E-2.0.0-INSERTION_SORT/wdir_bist/E-2.0.0-INSERTION_SORT/INSERTION_SORT.py", line 19, in main
+    +     A = INSERTION_SORT(A)
+    + TypeError: INSERTION_SORT() missing 1 required positional argument: 'n'
+    + Command exited with non-zero status 1
+
+   FAIL : INSERTION_SORT.3.out -- /home/cs301/RELEASE-cs301-repo/book-solution/sols-repo/cs301py/chap02-Intro/E-2.0.0-INSERTION_SORT/INSERTION_SORT.3.out 
+diff stdout(up to 10000 lines):                                           ......
+==============================
+      input  : 42  23   8  29  49  55  15  28  39  24   2  37   0  15   8  12  58  19  34  23  49  57  15  20  42  35  28  27  30   4
+    - sorted :  0   2   4   8   8  12  15  15  15  19  20  23  23  24  27  28  28  29  30  34  35  37  39  42  42  49  49  55  57  58
+    - 
+    -  Run stats   |   Count
+    - -------------+---------
+    -  cmpcnt      |     244
+    -  swapcnt     |     215
+
+diff stderr(up to 10000 lines):                                           ......
+==============================
+    + Traceback (most recent call last):
+    +   File "/home/cs301/cs301-sag-server/sag-server/result-repo/jh730/HW1/E-2.0.0-INSERTION_SORT/wdir_eval/E-2.0.0-INSERTION_SORT/wdir_bist/E-2.0.0-INSERTION_SORT/main.py", line 8, in <module>
+    +     INSERTION_SORT.main(ax)
+    +   File "/home/cs301/cs301-sag-server/sag-server/result-repo/jh730/HW1/E-2.0.0-INSERTION_SORT/wdir_eval/E-2.0.0-INSERTION_SORT/wdir_bist/E-2.0.0-INSERTION_SORT/INSERTION_SORT.py", line 19, in main
+    +     A = INSERTION_SORT(A)
+    + TypeError: INSERTION_SORT() missing 1 required positional argument: 'n'
+    + Command exited with non-zero status 1
+
+   FAIL : INSERTION_SORT.4.out -- /home/cs301/RELEASE-cs301-repo/book-solution/sols-repo/cs301py/chap02-Intro/E-2.0.0-INSERTION_SORT/INSERTION_SORT.4.out 
+diff stdout(up to 10000 lines):                                           ......
+==============================
+      input  : 20  18  10  27  16   5  26   7  13   7   1   1  15   9
+    - sorted :  1   1   5   7   7   9  10  13  15  16  18  20  26  27
+    - 
+    -  Run stats   |   Count
+    - -------------+---------
+    -  cmpcnt      |      76
+    -  swapcnt     |      63
+
+diff stderr(up to 10000 lines):                                           ......
+==============================
+    + Traceback (most recent call last):
+    +   File "/home/cs301/cs301-sag-server/sag-server/result-repo/jh730/HW1/E-2.0.0-INSERTION_SORT/wdir_eval/E-2.0.0-INSERTION_SORT/wdir_bist/E-2.0.0-INSERTION_SORT/main.py", line 8, in <module>
+    +     INSERTION_SORT.main(ax)
+    +   File "/home/cs301/cs301-sag-server/sag-server/result-repo/jh730/HW1/E-2.0.0-INSERTION_SORT/wdir_eval/E-2.0.0-INSERTION_SORT/wdir_bist/E-2.0.0-INSERTION_SORT/INSERTION_SORT.py", line 19, in main
+    +     A = INSERTION_SORT(A)
+    + TypeError: INSERTION_SORT() missing 1 required positional argument: 'n'
+    + Command exited with non-zero status 1
+

@@ -1,0 +1,5 @@
+jpa_id: cs301py/chap02-Intro/E-2.0.100-INSERTION_SORT2
+main: INSERTION_SORT2.py
+to_be_submitted:
+- INSERTION_SORT2.py
+- .v1

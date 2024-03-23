@@ -1,0 +1,5 @@
+jpa_id: cs301py/chap00-GettingStarted/E-0.0.0-HelloWorld2
+main: HelloWorld2.py
+to_be_submitted:
+- HelloWorld2.py
+- .v1

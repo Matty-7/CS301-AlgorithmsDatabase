@@ -1,0 +1,9 @@
+Traceback (most recent call last):
+  File "/home/cs301/cs301-sag-server/sag-server/result-repo/jh730/HW1/E-2.0.0-INSERTION_SORT/wdir_eval/E-2.0.0-INSERTION_SORT/wdir_bist/E-2.0.0-INSERTION_SORT/main.py", line 8, in <module>
+    INSERTION_SORT.main(ax)
+  File "/home/cs301/cs301-sag-server/sag-server/result-repo/jh730/HW1/E-2.0.0-INSERTION_SORT/wdir_eval/E-2.0.0-INSERTION_SORT/wdir_bist/E-2.0.0-INSERTION_SORT/INSERTION_SORT.py", line 19, in main
+    A = INSERTION_SORT(A)
+TypeError: INSERTION_SORT() missing 1 required positional argument: 'n'
+Command exited with non-zero status 1
+0.03user 0.00system 0:00.03elapsed 97%CPU (0avgtext+0avgdata 10796maxresident)k
+0inputs+32outputs (0major+1388minor)pagefaults 0swaps

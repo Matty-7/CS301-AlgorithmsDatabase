@@ -1,0 +1,5 @@
+jpa_id: cs301py/chap02-Intro/E-2.2.4-Inversions
+main: Inversions.py
+to_be_submitted:
+- Inversions.py
+- .v1

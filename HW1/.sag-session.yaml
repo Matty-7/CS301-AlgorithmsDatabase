@@ -1,0 +1,15 @@
+Points:
+  E-2.0.0-INSERTION_SORT: 1
+  E-2.0.1-MERGE_SORT_Demo2: 1
+  E-2.0.100-INSERTION_SORT2: 1
+  E-2.0.101-MERGESORT_v2: 1
+  E-2.2.4-Inversions: 1
+courseID: cs201
+hwID: HW1
+jpax:
+- E-2.0.100-INSERTION_SORT2
+- E-2.0.0-INSERTION_SORT
+- E-2.0.101-MERGESORT_v2
+- E-2.0.1-MERGE_SORT_Demo2
+- E-2.2.4-Inversions
+sessionID: CS201
