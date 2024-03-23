@@ -3,10 +3,17 @@ import Stats
 
 def INSERTION_SORT(A):
     # Complete the code here, see README on course website for problem description and instructions.
-
-
-
-
+    for j in range(1, len(A)):
+        key = A[j]
+        i = j - 1
+        Stats.Inc("cmpcnt")
+        while i >= 0 and A[i] > key:
+            A[i + 1] = A[i]
+            Stats.Inc("swapcnt")
+            i -= 1
+            Stats.Inc('cmpcnt')
+        A[i + 1] = key
+        
     return A
 
 def main(A):
