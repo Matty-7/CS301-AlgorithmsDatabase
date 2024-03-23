@@ -18,11 +18,26 @@ def MERGE(A, p, q, r):
     # MERGE(A[p:q] with A[q:r]
 
     # Complete the code here, see README on course website for problem description and instructions.
+    n1 = q - p
+    n2 = r - q
+    L = A[p:q] + [math.inf]
+    R = A[q:r] + [math.inf]
 
+    i = j = 0
+    for k in range(p, r):
+        if i < n1 and (j >= n2 or L[i] <= R[j]):
+            A[k] = L[i]
+            i += 1
+        else:
+            if R[j] == math.inf:
+                Stats.Inc('r_inf_move_cnt')
+            A[k] = R[j]
+            j += 1
 
+        if k == r - 1:
+            PrintPartArray(A, p, k+1, 'L+R')
 
-
-    pass
+    return A
 
 
 def MERGE_SORT(A, p, r):
@@ -34,7 +49,13 @@ def MERGE_SORT(A, p, r):
 
     # Complete the code here, see README on course website for problem description and instructions.
 
+    if p < r - 1:
+        q = (p + r) // 2
+        MERGE_SORT(A, p, q)
+        MERGE_SORT(A, q, r)
+        MERGE(A, p, q, r)
 
+    return A
 
 
 
