@@ -14,10 +14,20 @@ def PrintPartArray(A, p, q, tag=''  ):
     return r
 
 def MERGE(A, p, q, r):
-        
-    # MERGE(A[p:q] with A[q:r]
+    """
+    Merge two sorted sub-arrays of arr[] and use Stats.Inc for statistics
+    and PrintPartArray for demonstrating the merging process.
 
-    # Complete the code here, see README on course website for problem description and instructions.
+    Args:
+        arr (list): The target array to be sorted.
+        left (int): Starting index of the first sub-array.
+        mid (int): Ending index of the first sub-array and starting index of the second sub-array.
+        right (int): Ending index of the second sub-array.
+
+    Returns:
+        None: The function modifies the array in-place.
+    """
+    
 
     n1 = q - p
     n2 = r - q   
@@ -32,8 +42,7 @@ def MERGE(A, p, q, r):
     L.append(float('inf'))
     R.append(float('inf'))
 
-    i = 0
-    j = 0
+    i = j = 0
 
     B = []
 
@@ -99,6 +108,7 @@ def MERGE(A, p, q, r):
 def MERGE_SORT(A, p, r):
 
     # Note: we are following Python list index semantics
+
 
     # Sort subarray A[p:r]
     # e.g. to sort A[:] use MERGE_SORT(A, 0, len(A))
