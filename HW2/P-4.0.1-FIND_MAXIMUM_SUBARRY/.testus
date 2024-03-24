@@ -1,0 +1,5 @@
+jpa_id: cs301py/chap04-DivideAndConquer/P-4.0.1-FIND_MAXIMUM_SUBARRY
+main: FIND_MAXIMUM_SUBARRY.py
+to_be_submitted:
+- FIND_MAXIMUM_SUBARRY.py
+- .v1

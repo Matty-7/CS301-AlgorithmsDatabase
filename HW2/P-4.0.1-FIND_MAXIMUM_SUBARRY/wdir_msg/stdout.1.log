@@ -1,0 +1,55 @@
+
+------------------------------------------------------------
+Original array
+------------------------------------------------------------
+ 18    1   13   15   18    0    6   14   15    8 
+
+------------------------------------------------------------
+After transformation
+------------------------------------------------------------
+-17   12    2    3  -18    6    8    1   -7 
+
+------------------------------------------------------------
+Solving for maximum subarray
+------------------------------------------------------------
+
+-17   12    2    3  -18    6    8    1   -7     FIND_MAXIMUM_SUBARRAY [0:9] 
+
+-17   12    2    3                                FIND_MAXIMUM_SUBARRAY [0:4] 
+
+-17   12                                            FIND_MAXIMUM_SUBARRAY [0:2] 
+
+-17                                                   FIND_MAXIMUM_SUBARRAY [0:1] 
+-17#                                                  base-case return -17 
+
+                                                      FIND_MAXIMUM_SUBARRAY [2:2] 
+-17   12#                                             FIND_MAX_CROSS_SUBARRAY 0 2 1 
+      12x                                             FIND_MAX_CROSS_SUBARRAY return 12  
+-17   12#                                             return 12 -- FIND_MAXIMUM_SUBARRAY [0:2] 
+
+                 3                                  FIND_MAXIMUM_SUBARRAY [3:4] 
+                 3#                                 base-case return 3 
+-17   12    2#   3                                  FIND_MAX_CROSS_SUBARRAY 0 4 2 
+      12x   2x   3x                                 FIND_MAX_CROSS_SUBARRAY return 17  
+-17   12#   2#   3#                                 return 17 -- FIND_MAXIMUM_SUBARRAY [0:4] 
+
+                           6    8    1   -7       FIND_MAXIMUM_SUBARRAY [5:9] 
+
+                           6    8                   FIND_MAXIMUM_SUBARRAY [5:7] 
+
+                           6                          FIND_MAXIMUM_SUBARRAY [5:6] 
+                           6#                         base-case return 6 
+
+                                                      FIND_MAXIMUM_SUBARRAY [7:7] 
+                           6    8#                    FIND_MAX_CROSS_SUBARRAY 5 7 6 
+                           6x   8x                    FIND_MAX_CROSS_SUBARRAY return 14  
+                           6#   8#                    return 14 -- FIND_MAXIMUM_SUBARRAY [5:7] 
+
+                                         -7         FIND_MAXIMUM_SUBARRAY [8:9] 
+                                         -7#        base-case return -7 
+                           6    8    1#  -7         FIND_MAX_CROSS_SUBARRAY 5 9 7 
+                           6x   8x   1x             FIND_MAX_CROSS_SUBARRAY return 15  
+                           6#   8#   1#  -7         return 15 -- FIND_MAXIMUM_SUBARRAY [5:9] 
+-17   12    2    3  -18#   6    8    1   -7       FIND_MAX_CROSS_SUBARRAY 0 9 4 
+      12x   2x   3x -18x   6x   8x   1x           FIND_MAX_CROSS_SUBARRAY return 14  
+-17   12#   2#   3# -18    6    8    1   -7       return 17 -- FIND_MAXIMUM_SUBARRAY [0:9] 
