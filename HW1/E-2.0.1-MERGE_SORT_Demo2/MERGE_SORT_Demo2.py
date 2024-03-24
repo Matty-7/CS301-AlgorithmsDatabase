@@ -18,26 +18,82 @@ def MERGE(A, p, q, r):
     # MERGE(A[p:q] with A[q:r]
 
     # Complete the code here, see README on course website for problem description and instructions.
+
     n1 = q - p
-    n2 = r - q
-    L = A[p:q] + [math.inf]
-    R = A[q:r] + [math.inf]
+    n2 = r - q   
+    L = [0] * n1
+    R = [0] * n2
 
-    i = j = 0
-    for k in range(p, r):
-        if i < n1 and (j >= n2 or L[i] <= R[j]):
-            A[k] = L[i]
-            i += 1
+    for n in range(n1):
+        L[n] = A[p + n]
+    for m in range(n2):
+        R[m] = A[q + m]
+    
+    L.append(float('inf'))
+    R.append(float('inf'))
+
+    i = 0
+    j = 0
+
+    B = []
+
+    if len(L) == len(A) // 2 + 1:
+        for m in range(len(L) - 1):
+            B.append(L[m])
+        for n in range(len(R) - 1):
+            B.append(R[n])
+
+    for k in range(p,r):
+        if L[i]!=math.inf and R[j]!=math.inf:
+            if L[i]<=R[j]:
+                Stats.Inc('cmpcnt')
+                if(len(L)==len(A)//2+1):
+                    index1=B.index(L[i])
+                    B[index1]="*"
+                    PrintPartArray(B,p,r,tag= 'k='+str(k)+' L+R' )
+                    B[index1]="-"
+                    A[k]=L[i]
+                    PrintPartArray(A,p,k+1,tag='A')
+                    print()
+                else:A[k]=L[i]
+                i+=1
+            else:
+                if(len(L)==len(A)//2+1):
+                    index2=B.index(R[j])
+                    B[index2]="*"
+                    PrintPartArray(B,p,r,tag= 'k='+str(k)+' L+R' )
+                    B[index2]="-"
+                    A[k]=R[j]
+                    PrintPartArray(A,p,k+1,tag='A')
+                    print()
+                else:A[k]=R[j]
+                j+=1
+                Stats.Inc('cmpcnt')
+        elif L[i]==math.inf:
+            Stats.Inc('cmpcnt')
+            if(len(L)==len(A)//2+1):
+                index3=B.index(R[j])
+                B[index3]="*"
+                PrintPartArray(B,p,r,tag= 'k='+str(k)+' L+R' )
+                B[index3]="-"
+                A[k]=R[j]
+                PrintPartArray(A,p,k+1,tag='A')
+                print()
+            else:A[k]=R[j]
+            j+=1
         else:
-            if R[j] == math.inf:
-                Stats.Inc('r_inf_move_cnt')
-            A[k] = R[j]
-            j += 1
-
-        if k == r - 1:
-            PrintPartArray(A, p, k+1, 'L+R')
-
-    return A
+            Stats.Inc('r_inf_move_cnt')
+            Stats.Inc('cmpcnt')
+            if(len(L)==len(A)//2+1):
+                index4=B.index(L[i])
+                B[index4]="*"
+                PrintPartArray(B,p,r,tag= 'k='+str(k)+' L+R' )
+                B[index4]="-"
+                A[k]=L[i]
+                PrintPartArray(A,p,k+1,tag='A')
+                print()
+            else:A[k]=L[i]
+            i += 1
 
 
 def MERGE_SORT(A, p, r):
@@ -51,12 +107,9 @@ def MERGE_SORT(A, p, r):
 
     if p < r - 1:
         q = (p + r) // 2
-        MERGE_SORT(A, p, q)
-        MERGE_SORT(A, q, r)
-        MERGE(A, p, q, r)
-
-    return A
-
+        MERGE_SORT(A,p,q)  
+        MERGE_SORT(A,q,r)
+        MERGE(A,p,q,r)
 
 
 #-------------------------------------------
