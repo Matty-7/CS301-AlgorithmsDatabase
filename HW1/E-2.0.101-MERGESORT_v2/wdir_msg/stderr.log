@@ -1,0 +1,12 @@
+0.03user 0.00system 0:00.04elapsed 97%CPU (0avgtext+0avgdata 10792maxresident)k
+0inputs+24outputs (0major+1413minor)pagefaults 0swaps
+
+0.03user 0.00system 0:00.04elapsed 97%CPU (0avgtext+0avgdata 10388maxresident)k
+0inputs+8outputs (0major+1319minor)pagefaults 0swaps
+
+0.02user 0.01system 0:00.04elapsed 100%CPU (0avgtext+0avgdata 10488maxresident)k
+0inputs+8outputs (0major+1323minor)pagefaults 0swaps
+
+0.02user 0.01system 0:00.04elapsed 97%CPU (0avgtext+0avgdata 10560maxresident)k
+0inputs+16outputs (0major+1322minor)pagefaults 0swaps
+
