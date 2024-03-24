@@ -13,6 +13,7 @@ def rprint(*s):
 
 recur_depth = 0 
 def is_sorted(A):
+    
     # A function to check if an array is sorted 
 
     # Complete the code here, see README on course website for problem description and instructions.
@@ -48,8 +49,6 @@ def MERGE(A,B):
         recur_depth -= 1
         return x
     
-    
-
 def MERGE_SORT(A):
     # recursive mergesort on A[:mid] and A[mid:] where mid=len(A)//2
     
