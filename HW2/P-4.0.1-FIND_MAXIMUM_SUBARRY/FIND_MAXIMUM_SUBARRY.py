@@ -9,19 +9,18 @@ from Stats import Stats
 
 indent  = -2
 
-def brute_force(B):
+def brute_force(arr):
     # Complete the code here, see README on course website for problem description and instructions.
-    max = 0
-    current = 0
-    A = []
-    for i in range(0, len(B)):
-        for j in range(i, len(B)):
-            current += B[j]
-            if current > max:
-                max = current
-                A = B[i:j+1]
-        current = 0
-    return A
+    max_sum = -float('inf')
+    max_subarray = []
+    for i in range(len(arr)):
+        current_sum = 0
+        for j in range(i, len(arr)):
+            current_sum += arr[j]
+            if current_sum > max_sum:
+                max_sum = current_sum
+                max_subarray = arr[i:j+1]
+    return max_subarray
 
 def FIND_MAXIMUM_SUBARRAY(A, low, high):
 
@@ -33,9 +32,7 @@ def FIND_MAXIMUM_SUBARRAY(A, low, high):
     if high-low==0:
         indent-=2
         return A  
-    B=[]
-    C=[]
-    D=[]
+    B = C = D = []
     mid=(low+high)//2
     print()
     print(Stats.PrintArrayRange(A, low, high) + ' %s   FIND_MAXIMUM_SUBARRAY [%s:%s] '% (' '*indent, low, high))
@@ -75,17 +72,13 @@ def FIND_MAXIMUM_SUBARRAY(A, low, high):
         return D    
     
 def FIND_MAX_CROSS_SUBARRAY(A, low, mid, high): # must cross mid  
-    if high-low!=1:
+    if high - low != 1:
         print(Stats.PrintArrayRange(A, low, high, [mid]) + ' %s   FIND_MAX_CROSS_SUBARRAY %s %s %s '% (' '*(indent+2), low, high, mid))
     # Complete the code here, see README on course website for problem description and instructions.
-    current1=0
-    current2=0
-    max1=-math.inf
-    max2=-math.inf
-    B=[]
-    C=[]
-    first1=0
-    last1=0
+    current1 = current2 = 0
+    max1 = max2 = -math.inf
+    B = C = []
+    first1 = last1 = 0
     for i in range(mid,low-1,-1):
         current1+=A[i]
         if current1>max1:
