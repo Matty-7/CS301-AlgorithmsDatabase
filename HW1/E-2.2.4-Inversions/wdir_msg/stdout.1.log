@@ -1,0 +1,9 @@
+ 18   1  13  15  18   0   6  14  15   8
+  0   1   6   8  13  14  15  15  18  18
+
+ Run stats      |   Count
+----------------+---------
+ BruteForce_cnt |      23
+ inverse_cnt    |      23
+ r_inf_move_cnt |       4
+
