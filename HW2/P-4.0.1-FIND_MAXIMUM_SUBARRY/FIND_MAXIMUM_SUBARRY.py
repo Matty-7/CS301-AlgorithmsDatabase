@@ -9,7 +9,7 @@ from Stats import Stats
 
 indent  = -2
 
-def BruteForce(B):
+def brute_force(B):
     # Complete the code here, see README on course website for problem description and instructions.
     max = 0
     current = 0
@@ -103,11 +103,8 @@ def FIND_MAX_CROSS_SUBARRAY(A, low, mid, high): # must cross mid
         print(Stats.PrintArrayRange(A, first1, last1+1, [i for i in range(first1,last1+1)],symbol='x') + ' %s   FIND_MAX_CROSS_SUBARRAY return %s  '% (' '*(indent+2), sum(D)))
     return D
 
-def Transform(A):
-    B=[]
-    for i in range(0,len(A)-1):
-        B.append(A[i+1]-A[i])
-    return B
+def transform(arr):
+    return [arr[i+1]-arr[i] for i in range(len(arr)-1)]
 
 def dash(msg, n=60):
     print()
@@ -123,7 +120,7 @@ def main(A):
 
     Stats.Reset()
     dash('After transformation')
-    B = Transform(A)
+    B = transform(A)
 
     print(Stats.PrintArrayRange(B, 0, len(B)))
 
@@ -141,13 +138,13 @@ if __name__ == '__main__':
     #A=' 18    1   13   15   18    0    6   14   15    8 '.split()
     
     A=list(map(int, A))
-    B = Transform(A)
+    B = transform(A)
     
     a = main(A)
 
     dash('Divide and conquer result')
     print(a)
-    b = BruteForce(B)
+    b = brute_force(B)
     dash('Brutforce result')
     print(b)
 
