@@ -15,93 +15,95 @@ def PrintPartArray(A, p, q, tag=''  ):
 
 def MERGE(A, p, q, r):
     """
-    Merge two sorted sub-arrays of arr[] and use Stats.Inc for statistics
-    and PrintPartArray for demonstrating the merging process.
+    Merges two sorted sub-arrays of A into a single sorted array.
+
+    The first sub-array is A[p:q], and the second sub-array is A[q:r].
+    Uses sentinel values to simplify merging logic.
 
     Args:
-        arr (list): The target array to be sorted.
-        left (int): Starting index of the first sub-array.
-        mid (int): Ending index of the first sub-array and starting index of the second sub-array.
-        right (int): Ending index of the second sub-array.
+        A (list): The target list to be sorted.
+        p (int): Starting index of the first sub-array.
+        q (int): Ending index of the first sub-array and starting index of the second sub-array.
+        r (int): Ending index of the second sub-array.
 
     Returns:
-        None: The function modifies the array in-place.
+        None: Sorts the array in-place.
     """
     
-
     n1 = q - p
-    n2 = r - q   
-    L = [0] * n1
-    R = [0] * n2
+    n2 = r - q
+    L = [0] * n1 + [float('inf')]
+    R = [0] * n2 + [float('inf')]
 
-    for n in range(n1):
-        L[n] = A[p + n]
-    for m in range(n2):
-        R[m] = A[q + m]
+    for i in range(n1):
+        L[i] = A[p + i]
+    for j in range(n2):
+        R[j] = A[q + j]
     
-    L.append(float('inf'))
-    R.append(float('inf'))
+    #L.append(float('inf'))
+    #R.append(float('inf'))
 
     i = j = 0
-
     B = []
 
     if len(L) == len(A) // 2 + 1:
-        for m in range(len(L) - 1):
-            B.append(L[m])
-        for n in range(len(R) - 1):
-            B.append(R[n])
+        B.extend(L[:-1])
+        B.extend(R[:-1])
 
-    for k in range(p,r):
-        if L[i]!=math.inf and R[j]!=math.inf:
-            if L[i]<=R[j]:
+    for k in range(p, r):
+        if L[i] != float('inf') and R[j] != float('inf'):
+            if L[i] <= R[j]:
                 Stats.Inc('cmpcnt')
-                if(len(L)==len(A)//2+1):
-                    index1=B.index(L[i])
-                    B[index1]="*"
-                    PrintPartArray(B,p,r,tag= 'k='+str(k)+' L+R' )
-                    B[index1]="-"
-                    A[k]=L[i]
-                    PrintPartArray(A,p,k+1,tag='A')
+                if len(L) == len(A) // 2 + 1:
+                    index1 = B.index(L[i])
+                    B[index1] = "*"
+                    PrintPartArray(B, p, r, tag=f'k={k} L+R')
+                    B[index1] = "-"
+                    A[k] = L[i]
+                    PrintPartArray(A, p, k+1, tag='A')
                     print()
-                else:A[k]=L[i]
-                i+=1
+                else:
+                    A[k] = L[i]
+                i += 1
             else:
-                if(len(L)==len(A)//2+1):
-                    index2=B.index(R[j])
-                    B[index2]="*"
-                    PrintPartArray(B,p,r,tag= 'k='+str(k)+' L+R' )
-                    B[index2]="-"
-                    A[k]=R[j]
-                    PrintPartArray(A,p,k+1,tag='A')
+                if len(L) == len(A) // 2 + 1:
+                    index2 = B.index(R[j])
+                    B[index2] = "*"
+                    PrintPartArray(B, p, r, tag=f'k={k} L+R')
+                    B[index2] = "-"
+                    A[k] = R[j]
+                    PrintPartArray(A, p, k+1, tag='A')
                     print()
-                else:A[k]=R[j]
-                j+=1
+                else:
+                    A[k] = R[j]
+                j += 1
                 Stats.Inc('cmpcnt')
-        elif L[i]==math.inf:
+        elif L[i] == float('inf'):
             Stats.Inc('cmpcnt')
-            if(len(L)==len(A)//2+1):
-                index3=B.index(R[j])
-                B[index3]="*"
-                PrintPartArray(B,p,r,tag= 'k='+str(k)+' L+R' )
-                B[index3]="-"
-                A[k]=R[j]
-                PrintPartArray(A,p,k+1,tag='A')
+            if len(L) == len(A) // 2 + 1:
+                index3 = B.index(R[j])
+                B[index3] = "*"
+                PrintPartArray(B, p, r, tag=f'k={k} L+R')
+                B[index3] = "-"
+                A[k] = R[j]
+                PrintPartArray(A, p, k+1, tag='A')
                 print()
-            else:A[k]=R[j]
-            j+=1
+            else:
+                A[k] = R[j]
+            j += 1
         else:
             Stats.Inc('r_inf_move_cnt')
             Stats.Inc('cmpcnt')
-            if(len(L)==len(A)//2+1):
-                index4=B.index(L[i])
-                B[index4]="*"
-                PrintPartArray(B,p,r,tag= 'k='+str(k)+' L+R' )
-                B[index4]="-"
-                A[k]=L[i]
-                PrintPartArray(A,p,k+1,tag='A')
+            if len(L) == len(A) // 2 + 1:
+                index4 = B.index(L[i])
+                B[index4] = "*"
+                PrintPartArray(B, p, r, tag=f'k={k} L+R')
+                B[index4] = "-"
+                A[k] = L[i]
+                PrintPartArray(A, p, k+1, tag='A')
                 print()
-            else:A[k]=L[i]
+            else:
+                A[k] = L[i]
             i += 1
 
 
