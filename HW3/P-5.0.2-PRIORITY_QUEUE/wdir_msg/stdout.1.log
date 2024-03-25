@@ -1,0 +1,66 @@
+------------------------------------------------------------
+Test INSERT: 
+------------------------------------------------------------
+INSERT(3)
+INSERT(37)
+INSERT(83)
+INSERT(76)
+INSERT(25)
+INSERT(84)
+INSERT(20)
+INSERT(19)
+INSERT(18)
+INSERT(58)
+             84
+             / \
+            /   \
+           /     \
+          /       \
+         /         \
+        76          83
+       / \         / \
+      /   \       /   \
+     /     \     37    20
+    /       \
+   19        58
+  / \       /
+ /   \     25
+ 3    18
+
+------------------------------------------------------------
+Test INCREASE_KEY
+------------------------------------------------------------
+INCREASE_KEY(A, 6, 30) [where A[6] was 20] 
+INCREASE_KEY(A, 3, 28) [where A[3] was 19] 
+INCREASE_KEY(A, 9, 37) [where A[9] was 25] 
+INCREASE_KEY(A, 9, 55) [where A[9] was 37] 
+INCREASE_KEY(A, 7, 4) [where A[7] was 3] 
+             84
+             / \
+            /   \
+           /     \
+          /       \
+         /         \
+        76          83
+       / \         / \
+      /   \       /   \
+     /     \     37    30
+    /       \
+   28        58
+  / \       /
+ /   \     55
+ 4    18
+
+------------------------------------------------------------
+Text EXTRACT_MAX
+------------------------------------------------------------
+EXTRACE_MAX: 84
+EXTRACE_MAX: 83
+EXTRACE_MAX: 76
+EXTRACE_MAX: 58
+EXTRACE_MAX: 55
+EXTRACE_MAX: 37
+EXTRACE_MAX: 30
+EXTRACE_MAX: 28
+EXTRACE_MAX: 18
+EXTRACE_MAX: 4
