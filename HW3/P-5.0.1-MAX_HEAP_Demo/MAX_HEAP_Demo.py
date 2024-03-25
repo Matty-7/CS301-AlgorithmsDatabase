@@ -51,9 +51,9 @@ class MAX_HEAP:
         for i  in range(PARENT(self.heapsize-1)):
             L = LEFT(i)
             R = RIGHT(i)
-            if L <=self.heapsize-1 and self.A[L] > self.A[i]:
+            if L < self.heapsize and self.A[L] > self.A[i]:
                 return False
-            if R <=self.heapsize-1 and self.A[R] > self.A[i]:
+            if R < self.heapsize and self.A[R] > self.A[i]:
                 return False
             
         return True
@@ -82,11 +82,11 @@ class MAX_HEAP:
         #B[i]='('+str(self.A[i])+')'
         L=LEFT(i)
         R=RIGHT(i)
-        if L<=self.heapsize-1 and self.A[L]>self.A[i]:
+        if L < self.heapsize and self.A[L]>self.A[i]:
             max=L
         else:
             max=i
-        if R<=self.heapsize-1 and self.A[R]>self.A[max]:
+        if R < self.heapsize and self.A[R]>self.A[max]:
             max=R
         if max!=i:
             temp=self.A[i]
