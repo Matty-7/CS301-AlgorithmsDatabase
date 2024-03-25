@@ -16,11 +16,11 @@ def PARENT(i):
 
 def LEFT(i):  
     # Complete the code here, see README on course website for problem description and instructions.
-    return 2*(i+1)-1
+    return 2*i+1
 
 def RIGHT(i):  
     # Complete the code here, see README on course website for problem description and instructions.
-    return 2*(i+1)
+    return 2*i+2
 
 # MAX_HEAP inherit from build-in class list
 class MAX_HEAP:
