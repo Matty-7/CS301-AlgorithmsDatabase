@@ -36,7 +36,7 @@ def GetStatusLine2(A, p, r, q,recur_depth, func_name):
     indent = ' ' * recur_depth * 3
     f = '%s(A, %s, %s)' % (func_name, p, r)
     tag = indent + f + (' rdepth = %s' % recur_depth)
-    return GetStatusLine1(A,q,tag) 
+    return GetStatusLine1(A,q,tag)
 
 def PARTITION(A, p, r):
     # Complete the code here, see README on course website for problem description and instructions.
