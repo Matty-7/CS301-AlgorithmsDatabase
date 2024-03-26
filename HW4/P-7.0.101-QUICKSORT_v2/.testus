@@ -1,0 +1,5 @@
+jpa_id: cs301py/chap07-Quicksort/P-7.0.101-QUICKSORT_v2
+main: QUICKSORT_v2.py
+to_be_submitted:
+- QUICKSORT_v2.py
+- .v1

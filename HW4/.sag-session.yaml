@@ -1,0 +1,11 @@
+Points:
+  E-12.100.1-GenHeapBST: 1
+  P-7.0.1-QUICKSORT: 1
+  P-7.0.101-QUICKSORT_v2: 1
+courseID: cs201
+hwID: HW4
+jpax:
+- P-7.0.1-QUICKSORT
+- P-7.0.101-QUICKSORT_v2
+- E-12.100.1-GenHeapBST
+sessionID: CS201
