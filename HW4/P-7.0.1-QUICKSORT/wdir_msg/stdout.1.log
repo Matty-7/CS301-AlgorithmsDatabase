@@ -1,0 +1,23 @@
+  10   18    1   13   15   18    0    6   14   15    8    QUICKSORT(A, 0, 11) rdepth = 0
+                 #8                                          PARTITION(A, 0, 11) rdepth = 1
+   1    0    6                                               QUICKSORT(A, 0, 3) rdepth = 1
+            #6                                                  PARTITION(A, 0, 3) rdepth = 2
+   1    0                                                       QUICKSORT(A, 0, 2) rdepth = 2
+  #0                                                               PARTITION(A, 0, 2) rdepth = 3
+                                                                   QUICKSORT(A, 0, 0) rdepth = 3
+        1                                                          QUICKSORT(A, 1, 2) rdepth = 3
+                                                                QUICKSORT(A, 3, 3) rdepth = 2
+                      15   18   18   10   14   15   13       QUICKSORT(A, 4, 11) rdepth = 1
+                          #13                                   PARTITION(A, 4, 11) rdepth = 2
+                      10                                        QUICKSORT(A, 4, 5) rdepth = 2
+                                18   15   14   15   18          QUICKSORT(A, 6, 11) rdepth = 2
+                                                   #18             PARTITION(A, 6, 11) rdepth = 3
+                                18   15   14   15                  QUICKSORT(A, 6, 10) rdepth = 3
+                                         #15                          PARTITION(A, 6, 10) rdepth = 4
+                                15   14                               QUICKSORT(A, 6, 8) rdepth = 4
+                               #14                                       PARTITION(A, 6, 8) rdepth = 5
+                                                                         QUICKSORT(A, 6, 6) rdepth = 5
+                                     15                                  QUICKSORT(A, 7, 8) rdepth = 5
+                                               18                     QUICKSORT(A, 9, 10) rdepth = 4
+                                                                   QUICKSORT(A, 11, 11) rdepth = 3
+   0    1    6    8   10   13   14   15   15   18   18    sorted
